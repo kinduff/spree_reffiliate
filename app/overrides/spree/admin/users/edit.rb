@@ -11,7 +11,7 @@ Deface::Override.new(
       <th>Referred by</th>
       <td>
         <% if @user.referred? %>
-          <%= link_to(@user.referred_user.email, edit_admin_user_url(@user.referred_user)) %>
+          <%= link_to(@user.referred_by.email, edit_admin_user_url(@user.referred_by)) %>
         <% elsif @user.affiliate? %>
           <%= link_to(@user.affiliate.name, edit_admin_affiliate_url(@user.affiliate)) %>
         <% else %>

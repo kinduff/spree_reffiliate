@@ -7,7 +7,8 @@ describe Spree::Referral, :type => :model do
   end
 
   it "returns a code" do
-    referral = FactoryGirl.create(:referral)
+    user = FactoryGirl.create(:user)
+    referral = FactoryGirl.create(:referral, user: user)
     expect(referral.code).to_not be_nil
   end
 

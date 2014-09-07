@@ -10,7 +10,7 @@ module Spree
     after_create :create_referral
     after_create :referral_affiliate_check
 
-    def referred_user
+    def referred_by
       referred_record.try(:referral).try(:user)
     end
     

@@ -27,7 +27,7 @@ describe Spree::User, type: :model do
 
   context "referred user" do
     it "has a referred user" do
-      expect(@referred.referred_user).to eq(@user)
+      expect(@referred.referred_by).to eq(@user)
     end
     it "has a referred record" do
       expect(@referred.referred_record).to eq(@user.referral.referred_records.first)
