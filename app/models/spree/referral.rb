@@ -16,12 +16,11 @@ module Spree
     end
 
     protected
-
-    def attach_code
-      self.code = loop do
-        code =  (0...8).map { (65 + rand(26)).chr }.join
-        break code unless Referral.exists?(code: code)
+      def attach_code
+        self.code = loop do
+          code =  (0...8).map { (65 + rand(26)).chr }.join
+          break code unless Referral.exists?(code: code)
+        end
       end
-    end
   end
 end
