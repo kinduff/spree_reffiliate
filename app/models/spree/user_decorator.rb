@@ -3,7 +3,7 @@ module Spree
     has_one :referral
     has_one :referred_record
     has_one :affiliate, through: :referred_record, foreign_key: :affiliate_id
-    has_one :affiliate_record, class_name: 'ReferredRecord'
+    has_one :affiliate_record, class_name: ReferredRecord
 
     attr_accessor :referral_code, :affiliate_code
 
@@ -11,7 +11,7 @@ module Spree
     after_create :referral_affiliate_check
 
     def referred_user
-      referred_record.referral.user rescue nil
+      referred_record.try(:referral).try(:user)
     end
     
     def referral_count
@@ -19,11 +19,11 @@ module Spree
     end
 
     def referred?
-      !referred_record.referral.user.nil? rescue false
+      !referred_record.try(:referral).try(:user).nil?
     end
 
     def affiliate?
-      !affiliate.nil? rescue false
+      !affiliate.nil?
     end
 
     private
