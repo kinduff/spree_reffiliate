@@ -1,8 +1,8 @@
 module Spree
   class Affiliate < Spree::Base
     has_many :referred_records
-    validates :name, presence: true
-    validates :path, presence: true
+    
+    validates_presence_of :name, :path
 
     def referred_users
       referred_records.includes(:user).collect(&:user).compact

@@ -1,13 +1,8 @@
 require 'spec_helper'
 
 describe Spree::Referral, :type => :model do
-  it "generates a code" do
-    referral = FactoryGirl.build(:referral).create_code
-    expect(referral.code).to_not be_nil
-  end
-
   it "generates a code after created" do
-    referral = FactoryGirl.build(:referral).create_code
+    referral = FactoryGirl.build(:referral)
     expect{referral.save}.to change{referral.code}
   end
 

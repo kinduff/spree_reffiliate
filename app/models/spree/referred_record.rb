@@ -4,6 +4,6 @@ module Spree
     belongs_to :user, class_name: Spree.user_class.to_s
     belongs_to :affiliate
 
-    validates :user, presence: true
+    validates_presence_of :user
   end
 end
