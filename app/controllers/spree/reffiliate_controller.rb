@@ -6,7 +6,7 @@ module Spree
     end
     def affiliate
       session[:affiliate] = params[:path]
-      affiliate = Spree::Affiliate.find_by(:path => params[:path]) rescue nil
+      affiliate = Spree::Affiliate.find_by(:path => params[:path])
       if affiliate.nil? or affiliate.partial.blank? or !partial_exists affiliate.partial
         redirect_to(root_path)
       elsif partial_exists affiliate.partial

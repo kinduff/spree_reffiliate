@@ -6,7 +6,7 @@ Deface::Override.new(
 <<-CODE.chomp
 <dt>Referral URL</dt>
 <dd><input type='text' value='<%= referral_url(@user.referral.code) %>' onClick='this.select();' /></dd>
-<dt>Referred Users Count</dt>
+<dt>Referred Users</dt>
 <dd><%= @user.referral_count%></dd>
 CODE
 end
