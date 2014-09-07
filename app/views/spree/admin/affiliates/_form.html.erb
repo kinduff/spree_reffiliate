@@ -1,0 +1,22 @@
+<div data-hook="admin_user_form_fields" class="row">
+  <div class="alpha six columns">
+    <%= f.field_container :name do %>
+      <%= f.label :name, Spree.t(:name) %>
+      <%= f.text_field :name, :class => 'fullwidth' %>
+      <%= error_message_on :user, :name %>
+    <% end %>
+    <%= f.field_container :partial do %>
+      <%= f.label :partial, Spree.t(:partial) + " (leave blank if no partial) " %>
+      <p>app/views/spree/affiliates/<%= f.text_field :partial %></p>
+      <%= f.error_message_on :partial %>
+    <% end %>
+  </div>
+
+  <div class="omega six columns">
+    <%= f.field_container :path do %>
+      <%= f.label :path, Spree.t(:path) %>
+      <%= f.text_field :path, :class => 'fullwidth' %>
+      <%= f.error_message_on :path %>
+    <% end %>
+  </div>
+</div>

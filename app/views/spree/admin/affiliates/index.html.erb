@@ -1,0 +1,62 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:listing_affiliates) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <li>
+    <%= button_link_to Spree.t(:new_affiliate), new_admin_affiliate_url, :icon => 'plus', :id => 'admin_new_affiliate_link' %>
+  </li>
+<% end %>
+<% if @affiliates.any? %>
+  <table class="index" id="listing_affiliates" data-hook>
+    <colgroup>
+      <col style="width: 15%">
+      <col style="width: 20%">
+      <col style="width: 20%">
+      <col style="width: 10%">
+      <col style="width: 10%">
+      <col style="width: 10%">
+      <col style="width: 15%">
+    </colgroup>
+    <thead>
+      <tr data-hook="admin_affiliates_index_headers">
+        <th><%= Spree.t('affiliate.name') %></th>
+        <th><%= Spree.t('affiliate.path') %></th>
+        <th><%= Spree.t('affiliate.partial') %></th>
+        <th><%= Spree.t('affiliate.count') %></th>
+        <th><%= Spree.t('affiliate.status') %></th>
+        <th data-hook="admin_affiliates_index_header_actions" class="actions"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @affiliates.each do |affiliate|%>
+        <tr id="<%= spree_dom_id affiliate %>" data-hook="admin_affiliates_index_rows" class="<%= cycle('odd', 'even')%>">
+          <td class='affiliate_name'><%=link_to affiliate.name, edit_admin_affiliate_url(affiliate) %></td>
+          <td class='affiliate_path align-center'><%= affiliate_url(affiliate.path) %></td>
+          <% if affiliate.partial.blank? %>
+            <td class='affiliate_partial align-center'>No partial</td>
+          <% else %>
+            <td class='affiliate_partial align-center'>app/views/spree/affiliates/<%= affiliate.partial %></td>
+          <% end %>
+          <td class='affiliate_count align-center'><%= affiliate.referred_count %></td>
+          <% if affiliate.partial.blank? or !affiliate_partial_exists?(affiliate.partial) %>
+            <td class='affiliate_status align-center' style="color: red">Not found</td>
+          <% elsif affiliate_partial_exists?(affiliate.partial) %>
+            <td class='affiliate_status align-center' style="color: green">Found</td>
+          <% end %>
+          <td data-hook="admin_affiliates_index_row_actions" class="actions">
+            <%= link_to_edit affiliate, :no_text => true %>
+            <%= link_to_delete affiliate, :no_text => true %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate @affiliates %>
+<% else %>
+  <div class="alpha twelve columns no-objects-found">
+    <%= Spree.t(:no_resource_found, resource: "affiliates") %>,
+    <%= link_to Spree.t(:add_one), spree.new_admin_affiliate_path %>!
+  </div>
+<% end %>

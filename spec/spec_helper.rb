@@ -31,7 +31,7 @@ require 'spree/testing_support/factories'
 require 'spree/testing_support/url_helpers'
 
 # Requires factories defined in lib/spree_refiliate/factories.rb
-require 'spree_referrals/factories'
+require 'spree_reffiliate/factories'
 
 RSpec.configure do |config|
   # Customs

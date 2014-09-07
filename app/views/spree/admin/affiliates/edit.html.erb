@@ -1,0 +1,76 @@
+<% content_for :page_title do %>
+  <%= link_to "#{Spree.t(:editing_affiliate)} #{@affiliate.name}", edit_admin_affiliate_url(@affiliate) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <li>
+    <%= button_link_to Spree.t(:back_to_affiliates_list), spree.admin_affiliates_path, :icon => 'arrow-left' %>
+  </li>
+<% end %>
+
+<fieldset data-hook="admin_affiliate_edit_general_settings" class="alpha twelve columns">
+  <legend><%= Spree.t(:general_settings) %></legend>
+
+  <div data-hook="admin_affiliate_edit_form_header">
+    <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @affiliate } %>
+  </div>
+
+  <div data-hook="admin_affiliate_edit_form">
+    <%= form_for [:admin, @affiliate], as: :affiliate, url: admin_affiliate_url(@affiliate), method: :put do |f| %>
+      <%= render :partial => 'form', :locals => { :f => f } %>
+
+      <div data-hook="admin_affiliate_edit_form_button">
+        <%= render :partial => 'spree/admin/shared/edit_resource_links', :locals => { :collection_url => admin_affiliates_url } %>
+      </div>
+    <% end %>
+  </div>
+</fieldset>
+<fieldset data-hook="admin_affiliate_edit_stats" class="alpha twelve columns">
+  <legend><%= Spree.t(:statistics) %></legend>
+  <table>
+    <tbody>
+      <tr>
+        <th>Affiliate hyperlink</th>
+        <td><%= text_field_tag nil, affiliate_url(@affiliate.path), onclick: 'this.select();' %></td>
+      </tr>
+      <tr>
+        <th>Partial Status</th>
+        <% if @affiliate.partial.blank? or !affiliate_partial_exists?(@affiliate.partial) %>
+          <td style="color: red">Not found</td>
+        <% elsif affiliate_partial_exists?(@affiliate.partial) %>
+          <td style="color: green">Found</td>
+        <% end %>
+      </tr>
+      <tr>
+        <th>Referred users count</th>
+        <td><%= @affiliate.referred_count %></td>
+      </tr>
+      <tr>
+        <th>Referred orders count</th>
+        <td><%= @affiliate.referred_orders.count %></td>
+      </tr>
+      <tr>
+        <th>Orders referred</th>
+        <td>
+          <%= "No referred orders" if @affiliate.referred_orders.count == 0 %>
+          <ol style="margin-left: 20px;">
+            <% @affiliate.referred_orders.each do |user| %>
+              <li><%= link_to user.email, edit_admin_user_url(user) %></li>
+            <% end %>
+          </ol>
+        </td>
+      <tr>
+      <tr>
+        <th>Users referred</th>
+        <td>
+          <%= "No referred users" if @affiliate.referred_count == 0 %>
+          <ol style="margin-left: 20px;">
+            <% @affiliate.referred_users.each do |user| %>
+              <li><%= link_to user.email, edit_admin_user_url(user) %></li>
+            <% end %>
+          </ol>
+        </td>
+      <tr>
+    </tbody>
+  </table>
+</fieldset>
