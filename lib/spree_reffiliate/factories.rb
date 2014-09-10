@@ -7,4 +7,5 @@ FactoryGirl.define do
 
   factory :referral, class: Spree::Referral
   factory :referred_promotion_rule, class: Spree::ReferredPromotionRule
+  factory :affiliated_promotion_rule, class: Spree::AffiliatedPromotionRule
 end

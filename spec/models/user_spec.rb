@@ -15,7 +15,7 @@ describe Spree::User, type: :model do
       expect(@user.referral.code).not_to be_nil
     end
     it "has a referral count" do
-      expect(@user.referral_count).to eq(1)
+      expect(@user.referred_count).to eq(1)
     end
     it "has referred users" do
       expect(@user.referral.referred_users).to eq([@referred])
