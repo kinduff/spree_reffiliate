@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.summary     = 'Spree Affiliate and Referrals extension'
   s.description = 'Configurable affiliates and referrals features for Spree'
   s.homepage    = 'https://github.com/kinduff/spree_reffiliate'
-  s.license     = 'MIT'
+  s.license     = 'New-BSD'
   
   s.required_ruby_version = '>= 1.9.3'
 
