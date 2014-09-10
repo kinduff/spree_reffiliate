@@ -36,7 +36,7 @@ Deface::Override.new(
     <tr>
       <th>Users referred</th>
       <td>
-        <%= "No referred users yet." if @user.referral_count == 0 %>
+        <%= "No referred users yet." if @user.referred_count == 0 %>
         <ol style="margin-left: 20px;">
           <% @user.referral.referred_users.each do |user| %>
             <li><%= link_to user.email, edit_admin_user_url(user) %></li>
