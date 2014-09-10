@@ -44,6 +44,8 @@ bundle exec rails g reffiliate:generate
 
 ## Usage
 
+Referral path is `/r/:code` and Affiliate path (assigned in the admin) is `/a/:path`
+
 Once installed, you'll be able to access the following methods.
 
 #### Spree::User
@@ -55,6 +57,7 @@ Once installed, you'll be able to access the following methods.
 + referral => referral record
 
 #### Spree::Referral
++ code => referral code
 + referred_users => array of users
 + referred_orders => array of orders
 + referred_count => user count
@@ -93,6 +96,13 @@ Simply add this require statement to your spec_helper:
 ```ruby
 require 'spree_reffiliate/factories'
 ```
+
+## ToDo
++ Add missing documentation
++ Add 2-2-stable and 2-1-stable support (or at least test them)
++ Improve affiliates admin
++ Improve User and Orders listing at user admin
++ Add option or helper to show referral code to the user
 
 Copyright (c) 2014 Alejandro AR, released under the New BSD License
 
