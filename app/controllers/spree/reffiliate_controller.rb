@@ -1,5 +1,7 @@
 module Spree
   class ReffiliateController < Spree::StoreController
+    skip_before_action :redirect_to_registration
+
     def referral
       session[:referral] = params[:code]
       redirect_to root_path

@@ -12,7 +12,7 @@ module Spree
     end
 
     def referred_orders
-      referred_records.includes({:user => :orders}).collect{|u| u.user.orders }.flatten.compact
+      referred_records.includes({:user => :spree_orders}).collect{|u| u.user.spree_orders }.flatten.compact
     end
 
     protected
