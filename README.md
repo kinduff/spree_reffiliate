@@ -39,7 +39,7 @@ bundle exec rails g spree_reffiliate:install
 If you already have users within your database, you'll need to run the following command to generate the referral registry for your users:
 
 ```shell
-bundle exec rails g reffiliate:generate
+bundle exec rake reffiliate:generate
 ```
 
 ## Usage
