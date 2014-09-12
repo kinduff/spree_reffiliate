@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :affiliate, class: Spree::Affiliate do
-    name "Corona"
-    path "corona"
-    partial "corona"
+    name Faker::Name.first_name
+    path Faker::Name.first_name
+    partial Faker::Name.first_name
   end
 
   factory :referral, class: Spree::Referral

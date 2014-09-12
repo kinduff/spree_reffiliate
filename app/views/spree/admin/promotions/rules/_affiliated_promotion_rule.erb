@@ -1,0 +1,6 @@
+<div class="field alpha omega eight columns">
+  <label><%= Spree.t('affiliates_promotion_rule.choose_affiliates') %></label><br>
+  <% Spree::Affiliate.all.each do |r| %>
+    <p><label><input type='checkbox' name='<%= param_prefix %>[affiliate_list][]' id='affiliate_list_<%= r.id %>' value='<%= r.id %>' <%= 'checked="checked"' if promotion_rule.affiliate_list.include?(r.id) %> /> <%= r.name %></label></p>
+  <% end %>
+</div>
