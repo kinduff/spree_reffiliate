@@ -76,6 +76,9 @@ Once installed, you'll be able to access the following methods.
 ![Referral Listing](https://cloud.githubusercontent.com/assets/1270156/4210982/11e9966c-387f-11e4-9a27-fca70c7a706d.png)
 
 #### Promotion Rules
+
+**Important**: in both referrals and affiliates, do **not** fill in the promotion code for the promotion itself to be applied automatically to the user's order. If you add a promotion code, the user will need to apply the for promotion manually.
+
 For referrals:
 
 ![Referral Rules](https://cloud.githubusercontent.com/assets/1270156/4244240/ec3dac8c-3a1d-11e4-8c6d-42c9f9b31e5f.png)
