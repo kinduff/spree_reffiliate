@@ -13,7 +13,7 @@ Spree Reffiliate is a [Spree] Extension that adds the referral and affiliate fea
 + Admin is able to create an affiliate with a custom path
 + Customize the affiliate view with a partial
 + Users are going to be able to signup as an affiliated user
-+ Affiliated user can have promotions
++ Affiliated user can have individual promotions
 + Admin is able to see affiliated users and orders from affiliate
 
 ![Spree Reffiliate](https://cloud.githubusercontent.com/assets/1270156/4210980/11c6ba84-387f-11e4-8f3d-4eb7f45f9004.png)
@@ -74,7 +74,11 @@ Once installed, you'll be able to access the following methods.
 ![Referral Listing](https://cloud.githubusercontent.com/assets/1270156/4210982/11e9966c-387f-11e4-9a27-fca70c7a706d.png)
 
 #### Promotion Rules
-![Promotion Rules](https://cloud.githubusercontent.com/assets/1270156/4210984/11ec663a-387f-11e4-9407-e65f83642954.png)
+For referrals:
+![Referral Rules](https://cloud.githubusercontent.com/assets/1270156/4244240/ec3dac8c-3a1d-11e4-8c6d-42c9f9b31e5f.png)
+
+For affiliates:
+![Affiliate Rules](https://cloud.githubusercontent.com/assets/1270156/4244241/ec3e156e-3a1d-11e4-972a-5d61ebf0f053.png)
 
 ### User account
 ![User account](https://cloud.githubusercontent.com/assets/1270156/4210983/11e9b9a8-387f-11e4-8733-182bdebc449c.png)
