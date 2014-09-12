@@ -79,11 +79,11 @@ Once installed, you'll be able to access the following methods.
 
 **Important**: in both referrals and affiliates, do **not** fill in the promotion code for the promotion itself to be applied automatically to the user's order. If you add a promotion code, the user will need to apply the for promotion manually.
 
-For referrals:
+##### For referrals
 
 ![Referral Rules](https://cloud.githubusercontent.com/assets/1270156/4244240/ec3dac8c-3a1d-11e4-8c6d-42c9f9b31e5f.png)
 
-For affiliates:
+##### For affiliates
 
 ![Affiliate Rules](https://cloud.githubusercontent.com/assets/1270156/4244241/ec3e156e-3a1d-11e4-972a-5d61ebf0f053.png)
 
