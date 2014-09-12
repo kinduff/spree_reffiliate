@@ -77,9 +77,11 @@ Once installed, you'll be able to access the following methods.
 
 #### Promotion Rules
 For referrals:
+
 ![Referral Rules](https://cloud.githubusercontent.com/assets/1270156/4244240/ec3dac8c-3a1d-11e4-8c6d-42c9f9b31e5f.png)
 
 For affiliates:
+
 ![Affiliate Rules](https://cloud.githubusercontent.com/assets/1270156/4244241/ec3e156e-3a1d-11e4-972a-5d61ebf0f053.png)
 
 ### User account
