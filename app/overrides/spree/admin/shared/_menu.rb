@@ -1,7 +1,6 @@
 Deface::Override.new(
-  :virtual_path => "spree/admin/shared/_menu",
-  :name => "admin_content_admin_tab_parser",
-  :insert_bottom => "[data-hook='admin_tabs']",
-  :text => "<%= tab :affiliates,  :url => admin_affiliates_path, :icon => 'suitcase' %>",
-  :disabled => false
+  :virtual_path => "spree/admin/shared/_configuration_menu",
+  :name => "admin_content_admin_configuration_menu_parser",
+  :insert_bottom => "[data-hook='admin_configurations_sidebar_menu']",
+  :text => "<%= configurations_sidebar_menu_item Spree.t(:affiliates), admin_affiliates_path %>"
 )
