@@ -29,4 +29,18 @@ describe Spree::AffiliatedPromotionRule, :type => :model do
   it "is not elegible for falsy affiliated user" do
     expect(@rule.eligible?(@falsy_affiliated_order)).to be_falsy
   end
+  it "returns string selected affiliate ids" do
+    expect(@rule.affiliate_ids_string).to eq(@affiliate.id.to_s)
+  end
+  it "accepts string to assign affiliate ids" do
+    @rule.affiliate_ids_string = "1"
+    expect(@rule.affiliate_ids_string).to eq(@affiliate.id.to_s)
+  end
+  it "returns an array of affiliate ids" do
+    expect(@rule.affiliate_list).to eq([@affiliate.id])
+  end
+  it "accepts an array to assign affiliate ids" do
+    @rule.affiliate_list << [1]
+    expect(@rule.affiliate_list).to eq([@affiliate.id])
+  end
 end

@@ -23,7 +23,7 @@ module Spree
     end
 
     def affiliate_list
-      self.affiliate_ids
+      affiliate_ids
     end
 
     def affiliate_list=(a)
