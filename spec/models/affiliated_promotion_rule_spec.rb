@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Spree::AffiliatedPromotionRule, :type => :model do
+describe Spree::Promotion::Rules::AffiliatedPromotionRule, :type => :model do
   before do
     @affiliate = FactoryGirl.create(:affiliate, path: 'corona')
     @affiliated = FactoryGirl.create(:user, email:  Faker::Internet.email, affiliate_code: @affiliate.path)

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Spree::ReferredPromotionRule, :type => :model do
+describe Spree::Promotion::Rules::ReferredPromotionRule, :type => :model do
   before(:each) do
     @rule = FactoryGirl.build(:referred_promotion_rule)
     @user = FactoryGirl.create(:user, email: Faker::Internet.email)
