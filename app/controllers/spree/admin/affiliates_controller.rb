@@ -7,10 +7,12 @@ module Spree
         @affiliates = Affiliate.all.page(params[:page]).per(Spree::Config[:admin_products_per_page])
       end
 
-      def affiliate_partial_exists? partial
-        return false if partial.blank? 
-        lookup_context.template_exists?(partial, ["spree/affiliates"], false)
-      end
+      protected
+
+        def affiliate_partial_exists? partial
+          return false if partial.blank? 
+          Affiliate.lookup_for_partial lookup_context, partial
+        end
     end
   end
 end

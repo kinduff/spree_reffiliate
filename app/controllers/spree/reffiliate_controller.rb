@@ -16,7 +16,7 @@ module Spree
 
     private
       def partial_exists partial
-        lookup_context.template_exists?(partial, ["spree/affiliates"], false)
+        Affiliate.lookup_for_partial lookup_context, partial
       end
   end
 end

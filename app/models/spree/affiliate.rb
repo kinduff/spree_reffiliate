@@ -15,5 +15,10 @@ module Spree
     def referred_count
       referred_records.count
     end
+
+      def self.lookup_for_partial lookup_context, partial
+        lookup_context.template_exists?(partial, ["spree/affiliates"], false)
+      end
+
   end
 end
