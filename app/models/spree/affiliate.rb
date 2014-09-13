@@ -16,6 +16,10 @@ module Spree
       referred_records.count
     end
 
+    def get_layout
+      return false if layout == 'false'
+      layout
+    end
 
     private
 
