@@ -3,6 +3,7 @@ FactoryGirl.define do
     name Faker::Name.first_name
     path Faker::Name.first_name
     partial Faker::Name.first_name
+    layout nil
   end
 
   factory :referral, class: Spree::Referral
