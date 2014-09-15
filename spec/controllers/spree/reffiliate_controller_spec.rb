@@ -39,6 +39,18 @@ describe Spree::ReffiliateController, :type => :controller do
       spree_get :affiliate, path: @affiliate.path
       response.should render_template('spree/affiliates/corona')
     end
+    context "layout options" do
+      @options = Hash[Spree::Affiliate.layout_options]
+      @options.each do |layout, option|
+        it "#{layout}" do
+          option = 'layouts/application' if option.nil?
+          @affiliate = FactoryGirl.create(:affiliate, name: layout, path: layout, partial: 'corona', layout: option)
+          controller.prepend_view_path 'spec/assets'
+          allow(controller).to receive(:partial_exists).and_return(true)
+          spree_get :affiliate, path: @affiliate.path
+          response.should render_template(layout: @affiliate.get_layout)
+        end
+      end 
     end
   end
 end
