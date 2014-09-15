@@ -34,10 +34,11 @@ describe Spree::ReffiliateController, :type => :controller do
       expect(response).to redirect_to('/')
     end
     it "renders a partial if affiliate partial is found" do
-      allow(controller).to receive(:partial_exists).and_return(true)
-      expect {
-        spree_get :affiliate, path: @affiliate.path
-      }.to raise_error(ActionView::MissingTemplate) # no fake template
+      @affiliate.update_attribute :partial, 'corona'
+      controller.prepend_view_path 'spec/assets'
+      spree_get :affiliate, path: @affiliate.path
+      response.should render_template('spree/affiliates/corona')
+    end
     end
   end
 end
