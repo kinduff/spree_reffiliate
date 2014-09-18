@@ -2,7 +2,7 @@
   <div class="alpha six columns">
     <%= f.field_container :name do %>
       <%= f.label :name, Spree.t(:name) %>
-      <%= f.text_field :name, :class => 'fullwidth' %>
+      <%= f.text_field :name, class: 'fullwidth' %>
       <%= error_message_on :user, :name %>
     <% end %>
     <%= f.field_container :partial do %>
@@ -15,8 +15,31 @@
   <div class="omega six columns">
     <%= f.field_container :path do %>
       <%= f.label :path, Spree.t(:path) %>
-      <%= f.text_field :path, :class => 'fullwidth' %>
+      <%= f.text_field :path, class: 'fullwidth' %>
       <%= f.error_message_on :path %>
+    <% end %>
+    <%= f.field_container :path do %>
+      <%= f.label :layout, Spree.t(:layout) %>
+      <%= select_tag 'fake_layout', options_for_select(@layout_options, selected: @affiliate.layout), class: "fullwidth #{'other' unless @layout_options.flatten.include?(@affiliate.layout)}" %>
+      <%= f.text_field :layout, value: @affiliate.layout.nil? ? @layout_options.first : @affiliate.layout, class: 'fullwidth' %>
+      <script>
+        var fake_layout = $("#fake_layout"),
+            affiliate_layout = $("#affiliate_layout");
+        fake_layout.on("change", function(){
+          affiliate_layout.hide();
+          if ($(this).val() != '') {
+            affiliate_layout.val($(this).val());
+          } else {
+            affiliate_layout.val('layouts/application').show().focus();
+          }
+        });
+        if (!fake_layout.hasClass('other')) {
+          affiliate_layout.hide();
+        } else {
+          fake_layout.val('');
+        }
+      </script>
+      <%= f.error_message_on :layout %>
     <% end %>
   </div>
 </div>

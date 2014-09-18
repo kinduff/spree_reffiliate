@@ -10,13 +10,13 @@ module Spree
       if affiliate.nil? or affiliate.partial.blank? or !partial_exists affiliate.partial
         redirect_to(root_path)
       elsif partial_exists affiliate.partial
-        render "spree/affiliates/#{affiliate.partial}"
+        render "spree/affiliates/#{affiliate.partial}", :layout => affiliate.get_layout
       end
     end
 
     private
       def partial_exists partial
-        lookup_context.template_exists?(partial, ["spree/affiliates"], false)
+        Affiliate.lookup_for_partial lookup_context, partial
       end
   end
 end
