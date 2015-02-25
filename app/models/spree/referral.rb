@@ -12,7 +12,11 @@ module Spree
     end
 
     def referred_orders
-      referred_records.includes({:user => :orders}).collect{|u| u.user.orders }.flatten.compact
+      referred_records_with_user_orders.collect{|u| u.user.orders }.flatten.compact
+    end
+
+    def referral_activated_users
+      referred_records_with_user_orders.select{|u| post_referral_order?(u) }.collect(&:user)
     end
 
     protected
@@ -22,5 +26,15 @@ module Spree
           break code unless Referral.exists?(code: code)
         end
       end
+
+   private
+
+    def referred_records_with_user_orders
+      referred_records.includes({:user => :orders})
+    end
+
+    def post_referral_order?(referred_record)
+      referred_record.user.orders.where('completed_at > ?', self.user.created_at).any?
+    end
   end
 end

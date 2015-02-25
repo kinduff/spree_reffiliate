@@ -1,7 +1,11 @@
 Spree Reffiliate
 ================
 
+=======
+[ ![Codeship Status for kinduff/spree_reffiliate](https://codeship.com/projects/ab504f70-4b22-0132-8f9f-22e1dbe6882e/status)](https://codeship.com/projects/46636)
 [![Build Status](https://travis-ci.org/kinduff/spree_reffiliate.svg?branch=2-3-stable)](https://travis-ci.org/kinduff/spree_reffiliate)
+[![Code Climate](https://codeclimate.com/github/kinduff/spree_reffiliate/badges/gpa.svg)](https://codeclimate.com/github/kinduff/spree_reffiliate)
+[![Test Coverage](https://codeclimate.com/github/kinduff/spree_reffiliate/badges/coverage.svg)](https://codeclimate.com/github/kinduff/spree_reffiliate)
 
 Spree Reffiliate is a [Spree] Extension that adds the referral and affiliate features to your Spree Store. Users are going to be able to share a unique hyperlink with their friends to gain benefits and you'll be able to create affiliate campaigns through the Spree Administrator and configure it to your needs.
 
@@ -61,6 +65,7 @@ Once installed, you'll be able to access the following methods.
 + referred_users => array of users
 + referred_orders => array of orders
 + referred_count => user count
++ referral_activated_users => users with completed orders
 
 #### Spree::Affiliates
 + referred_users => array of users
