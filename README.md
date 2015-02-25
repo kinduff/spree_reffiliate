@@ -1,7 +1,6 @@
 Spree Reffiliate
 ================
 
-=======
 [ ![Codeship Status for kinduff/spree_reffiliate](https://codeship.com/projects/ab504f70-4b22-0132-8f9f-22e1dbe6882e/status)](https://codeship.com/projects/46636)
 [![Build Status](https://travis-ci.org/kinduff/spree_reffiliate.svg?branch=2-3-stable)](https://travis-ci.org/kinduff/spree_reffiliate)
 [![Code Climate](https://codeclimate.com/github/kinduff/spree_reffiliate/badges/gpa.svg)](https://codeclimate.com/github/kinduff/spree_reffiliate)
