@@ -25,7 +25,13 @@ Spree Reffiliate is a [Spree] Extension that adds the referral and affiliate fea
 
 ## Installation
 
-Add spree_reffiliate to your Gemfile:
+To use the stable branch, add this line to your Gemfile:
+
+```ruby
+gem 'spree_reffiliate'
+```
+
+Alternatively, if you want to use the bleeding edge version, use this line:
 
 ```ruby
 gem 'spree_reffiliate', github: 'kinduff/spree_reffiliate'
