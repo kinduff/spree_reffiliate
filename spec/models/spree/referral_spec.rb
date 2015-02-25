@@ -32,8 +32,10 @@ describe Spree::Referral, :type => :model do
     it "returns an array of referred orders" do
       expect(@user.referral.referred_orders).to eq([@order])
     end
-    it "returns an array of referral activated users" do
-      expect(@user.referral.referral_activated_users).to eq([@referred])
+    it "returns an array of referral activated users with completed_orders" do
+      referred_user_with_completed_order = FactoryGirl.create(:user, referral_code: @user.referral.code)
+      completed_order = FactoryGirl.create(:order, completed_at: @user.created_at + 1.second, user: referred_user_with_completed_order)
+      expect(@user.referral.referral_activated_users).to eq([referred_user_with_completed_order])
     end
   end
 end

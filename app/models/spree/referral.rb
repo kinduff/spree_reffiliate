@@ -34,7 +34,7 @@ module Spree
     end
 
     def post_referral_order?(referred_record)
-      referred_record.user.orders.where('created_at > ?', self.user.created_at).any?
+      referred_record.user.orders.where('completed_at > ?', self.user.created_at).any?
     end
   end
 end
