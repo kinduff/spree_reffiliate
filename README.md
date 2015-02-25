@@ -64,6 +64,7 @@ Once installed, you'll be able to access the following methods.
 + referred_users => array of users
 + referred_orders => array of orders
 + referred_count => user count
++ referral_activated_users => users with completed orders
 
 #### Spree::Affiliates
 + referred_users => array of users
