@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_reffiliate'
-  s.version     = '2.4'
+  s.version     = '2.4.1'
   s.author      = 'Alejandro AR'
   s.email       = 'abarcadabra@gmail.com'
   s.summary     = 'Spree Affiliate and Referrals extension'
