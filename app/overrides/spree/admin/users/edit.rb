@@ -28,7 +28,7 @@ Deface::Override.new(
         <%= "No referred orders yet." if @user.referral.referred_orders.count == 0 %>
         <ol style="margin-left: 20px;">
           <% @user.referral.referred_orders.each do |order| %>
-            <li><%= link_to order.number, edit_admin_order_path(order) %></li>
+            <li><%= link_to order.number, edit_admin_order_path(order) %> (<%= order.state %>)</li>
           <% end %>
         <ol>
       </td>
