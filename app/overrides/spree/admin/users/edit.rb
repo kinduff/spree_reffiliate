@@ -19,10 +19,11 @@ Deface::Override.new(
         <% end %>
       </td>
     </tr>
+    <tr>
       <th>Referral code</th>
       <td><%= @user.referral.code %></td>
-    <tr>
     </tr>
+    <tr>
       <th>Referred orders</th>
       <td>
         <%= "No referred orders yet." if @user.referral.referred_orders.count == 0 %>
@@ -32,7 +33,7 @@ Deface::Override.new(
           <% end %>
         <ol>
       </td>
-    <tr>
+    </tr>
     <tr>
       <th>Users referred</th>
       <td>
@@ -43,8 +44,7 @@ Deface::Override.new(
           <% end %>
         </ol>
       </td>
-    <tr>
-  </tr>
+    </tr>
 </fieldset>
 CODE
 end
