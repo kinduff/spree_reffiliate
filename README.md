@@ -1,3 +1,6 @@
+ ## :warning: This repository is no longer maintained by the original author :warning:
+ ## :warning: Please refer to [vinsol-spree-contrib/spree_reffiliate](https://github.com/vinsol-spree-contrib/spree_reffiliate) for an updated version :warning:
+
 Spree Reffiliate
 ================
 
